@@ -9,3 +9,6 @@
 
 require('../config.php');
 require(CORE_PATH . '/System.class.php');
+
+System::start();
+System::set_debug_mode(DEBUGGING_MODE);

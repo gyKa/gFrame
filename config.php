@@ -1,5 +1,11 @@
 <?php
 
+define('DEBUGGING_MODE', TRUE);
+
+/*
+ * PATHS
+ */
+
 /**
  * Absolute framework path
  */
