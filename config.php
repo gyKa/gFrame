@@ -3,6 +3,20 @@
 define('DEBUGGING_MODE', TRUE);
 
 /*
+ * MODULES
+ */
+
+/**
+ * Default module for not authorized users 
+ */
+define('DEFAULT_GUEST_MODULE', 'index');
+
+/**
+ * Default module for authorized users 
+ */
+define('DEFAULT_USER_MODULE', 'dashboard');
+
+/*
  * PATHS
  */
 
