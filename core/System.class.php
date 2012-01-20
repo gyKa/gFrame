@@ -32,7 +32,7 @@ class System
     {
         str_replace(array('.', ':', '/'), '', $module);
 
-        $item_path = self::$modules_path . '/' . $module . '/' . $module . '.' . $item . '.php';
+        $item_path = self::$module_path . '/' . $module . '/' . $module . '.' . $item . '.php';
 
         if (file_exists($item_path)) {
             return require($item_path);
