@@ -9,6 +9,7 @@
 
 require('../config.php');
 require(CORE_PATH . '/System.class.php');
+require(CORE_PATH . '/Controller.class.php');
 
 System::start();
 System::set_debug_mode(DEBUGGING_MODE);
@@ -22,6 +23,11 @@ $action = !empty($_GET['action']) ? $_GET['action'] : NULL;
 System::include_module_item($module, 'model');
 
 if (System::include_module_item($module, 'controller') === FALSE)
-{
     System::redirect($default_module);
-}  
+
+$Module = new Module();
+
+if (!is_null($action) && method_exists($Module, $action))
+    $Module->$action();
+else
+    $Module->index();
