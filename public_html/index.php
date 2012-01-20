@@ -26,8 +26,11 @@ if (System::include_module_item($module, 'controller') === FALSE)
     System::redirect($default_module);
 
 $Module = new Module();
+$Module->set_layouts_path(LAYOUTS_PATH);
+$Module->set_module_name($module);
+$Module->set_modules_path(MODULES_PATH);
 
 if (!is_null($action) && method_exists($Module, $action))
-    $Module->$action();
+    $Module->set_action($action);
 else
-    $Module->index();
+    $Module->set_action('index');
