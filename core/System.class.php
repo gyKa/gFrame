@@ -30,8 +30,6 @@ class System
     
     public static function include_module_item($module, $item)
     {
-        str_replace(array('.', ':', '/'), '', $module);
-
         $item_path = self::$module_path . '/' . $module . '/' . $module . '.' . $item . '.php';
 
         if (file_exists($item_path)) {
