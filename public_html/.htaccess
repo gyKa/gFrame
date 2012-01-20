@@ -1,0 +1,21 @@
+# Bad Request
+#ErrorDocument 400 /index.php?module=error&action=bad_request
+
+# Authentication Required
+#ErrorDocument 401 /index.php?module=error&action=authentication_required
+
+# Forbidden
+#ErrorDocument 403 /index.php?module=error&action=forbidden
+
+# Not Found
+#ErrorDocument 404 /index.php?module=error&action=not_found
+
+# Server Error
+#ErrorDocument 500 /index.php?module=error&action=server_error
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    RewriteRule ^([^/\.]+)/?$ index.php?module=$1 [L]
+    RewriteRule ^([^/\.]+)/([^/\.]+)/?$ index.php?module=$1&action=$2 [L]
+</IfModule>
