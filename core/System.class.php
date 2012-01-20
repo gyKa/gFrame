@@ -40,4 +40,12 @@ class System
 
         return FALSE;
     }
+    
+    public static function redirect($module)
+    {
+        $url = "http://{$_SERVER['HTTP_HOST']}{$_SERVER['PHP_SELF']}/$module";
+        
+        header('Location: ' . $url);
+        exit;
+    }
 }

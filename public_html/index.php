@@ -23,5 +23,5 @@ System::include_module_item($module, 'model');
 
 if (System::include_module_item($module, 'controller') === FALSE)
 {
-    // redirect default module
-}
+    System::redirect($default_module);
+}  
