@@ -12,9 +12,10 @@ define('DEBUGGING_MODE', TRUE);
 define('DEFAULT_GUEST_MODULE', 'index');
 
 /**
- * Default module for authorized users 
+ * Default module for authorized users. If value is empty, do not use
+ * authorization.
  */
-define('DEFAULT_USER_MODULE', 'dashboard');
+define('DEFAULT_USER_MODULE', '');
 
 /*
  * PATHS
