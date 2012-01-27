@@ -1,1 +1,1 @@
-<p>Default module INDEX</p>
+<p>Default module</p>
