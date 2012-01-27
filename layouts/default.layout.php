@@ -7,9 +7,7 @@
     </head>
     
     <body>
-        <div class="container_12">
-            <h1>It works!</h1>
-            <?php $this->get_view(); ?>
-        </div>
+        <h1>It works!</h1>
+        <?php $this->get_view(); ?>
     </body>
 </html>
