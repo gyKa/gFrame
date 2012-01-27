@@ -1,5 +1,18 @@
 <?php
 
+if (!empty($_GET['css']))
+{
+    header("Content-Type: text/css");
+
+    if (file_exists(CSS_PATH . '/' . $_GET['css']))
+        echo file_get_contents(CSS_PATH . '/' . $_GET['css']);
+    else
+        if (file_exists(PUBLIC_PATH . '/' . CSS_DIR . '/' . $_GET['css']))
+            echo file_get_contents(PUBLIC_PATH . '/' . CSS_DIR . '/' . $_GET['css']);
+    
+    exit;
+}
+
 require(CORE_PATH . '/System.class.php');
 require(CORE_PATH . '/Controller.class.php');
 
