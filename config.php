@@ -69,3 +69,8 @@ define('LAYOUTS_PATH', ROOT_PATH . '/layouts');
  * Absolute CSS path
  */
 define('CSS_PATH', ROOT_PATH . '/' . CSS_DIR);
+
+/**
+ * Public path 
+ */
+define('PUBLIC_PATH', dirname(__FILE__));
