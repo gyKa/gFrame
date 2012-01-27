@@ -2,6 +2,7 @@
 
 define('DEBUGGING_MODE', TRUE);
 
+
 /*
  * MODULES
  */
@@ -9,13 +10,36 @@ define('DEBUGGING_MODE', TRUE);
 /**
  * Default module for not authorized users 
  */
-define('DEFAULT_GUEST_MODULE', 'index');
+define('DEFAULT_GUEST_MODULE', 'default');
 
 /**
  * Default module for authorized users. If value is empty, do not use
  * authorization.
  */
 define('DEFAULT_USER_MODULE', '');
+
+
+/*
+ * DIRECTORIES
+ */
+
+define('CSS_DIR', 'css');
+
+
+/*
+ * URLS
+ */
+
+/**
+ * Absolute base url 
+ */
+define('BASE_URL', 'http://' . $_SERVER['SERVER_NAME'] . substr($_SERVER['SCRIPT_NAME'], 0, -9));
+
+/**
+ * Absolute CSS url 
+ */
+define('CSS_URL', BASE_URL . CSS_DIR);
+
 
 /*
  * PATHS
@@ -40,3 +64,13 @@ define('MODULES_PATH', ROOT_PATH . '/modules');
  * Absolute layouts path
  */
 define('LAYOUTS_PATH', ROOT_PATH . '/layouts');
+
+/**
+ * Absolute CSS path
+ */
+define('CSS_PATH', ROOT_PATH . '/' . CSS_DIR);
+
+/**
+ * Absolute public path 
+ */
+define('PUBLIC_PATH', ROOT_PATH . '/public_html');
