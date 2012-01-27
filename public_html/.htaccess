@@ -18,4 +18,6 @@
 
     RewriteRule ^([^/\.]+)/?$ index.php?module=$1 [L]
     RewriteRule ^([^/\.]+)/([^/\.]+)/?$ index.php?module=$1&action=$2 [L]
+
+    RewriteRule ^css/([^/]+)/?$ index.php?css=$1 [L]
 </IfModule>
