@@ -1,76 +1,35 @@
 <?php
 
-define('DEBUGGING_MODE', TRUE);
+$config = array();
 
+/*
+ * DEBUGGING
+ */
+$config['DEBUGGING_MODE'] = TRUE;
 
 /*
  * MODULES
  */
-
-/**
- * Default module for not authorized users 
- */
-define('DEFAULT_GUEST_MODULE', 'default');
-
-/**
- * Default module for authorized users. If value is empty, do not use
- * authorization.
- */
-define('DEFAULT_USER_MODULE', '');
-
+$config['DEFAULT_GUEST_MODULE'] = 'default'; // Default module for not authorized users
+$config['DEFAULT_USER_MODULE'] = ''; // Default module for authorized users. If value is empty, do not use authorization.
 
 /*
  * DIRECTORIES
  */
-
-define('CSS_DIR', 'css');
-
+$config['CSS_DIR'] = 'css';
 
 /*
  * URLS
  */
-
-/**
- * Absolute base url 
- */
-define('BASE_URL', 'http://' . $_SERVER['SERVER_NAME'] . substr($_SERVER['SCRIPT_NAME'], 0, -9));
-
-/**
- * Absolute CSS url 
- */
-define('CSS_URL', BASE_URL . CSS_DIR);
-
+$config['BASE_URL'] = 'http://' . $_SERVER['SERVER_NAME'] . substr($_SERVER['SCRIPT_NAME'], 0, -9); // Absolute base url
+$config['CSS_URL'] = $config['BASE_URL'] . $config['CSS_DIR']; // Absolute CSS url
 
 /*
  * PATHS
  */
-
-/**
- * Absolute framework path
- */
-define('ROOT_PATH', dirname(__FILE__));
-
-/**
- * Absolute core path
- */
-define('CORE_PATH', ROOT_PATH . '/core');
-
-/**
- * Absolute modules path
- */
-define('MODULES_PATH', ROOT_PATH . '/modules');
-
-/**
- * Absolute layouts path
- */
-define('LAYOUTS_PATH', ROOT_PATH . '/layouts');
-
-/**
- * Absolute CSS path
- */
-define('CSS_PATH', ROOT_PATH . '/' . CSS_DIR);
-
-/**
- * Public path 
- */
-define('PUBLIC_PATH', dirname(__FILE__));
+$config['ROOT_PATH'] = dirname(__FILE__); // Absolute framework path
+$config['CORE_PATH'] = $config['ROOT_PATH'] . '/core'; // Absolute core path
+$config['MODULES_PATH'] = $config['ROOT_PATH'] . '/modules'; // Absolute modules path
+$config['LAYOUTS_PATH'] = $config['ROOT_PATH'] . '/layouts'; // Absolute layouts path
+$config['CSS_PATH'] = $config['ROOT_PATH'] . '/' . $config['CSS_DIR']; // Absolute CSS path
+$config['PUBLIC_PATH'] = dirname(__FILE__); // Public path

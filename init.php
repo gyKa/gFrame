@@ -1,5 +1,8 @@
 <?php
 
+foreach ($config as $key => $value)
+    define($key, $value);
+
 if (!empty($_GET['css']))
 {
     header("Content-Type: text/css");
