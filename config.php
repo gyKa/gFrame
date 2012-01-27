@@ -69,8 +69,3 @@ define('LAYOUTS_PATH', ROOT_PATH . '/layouts');
  * Absolute CSS path
  */
 define('CSS_PATH', ROOT_PATH . '/' . CSS_DIR);
-
-/**
- * Absolute public path 
- */
-define('PUBLIC_PATH', ROOT_PATH . '/public_html');

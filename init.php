@@ -7,8 +7,8 @@ if (!empty($_GET['css']))
     if (file_exists(CSS_PATH . '/' . $_GET['css']))
         echo file_get_contents(CSS_PATH . '/' . $_GET['css']);
     else
-        if (file_exists(PUBLIC_PATH . '/' . CSS_DIR . '/' . $_GET['css']))
-            echo file_get_contents(PUBLIC_PATH . '/' . CSS_DIR . '/' . $_GET['css']);
+        if (file_exists(ROOT_PATH . '/' . CSS_DIR . '/' . $_GET['css']))
+            echo file_get_contents(ROOT_PATH . '/' . CSS_DIR . '/' . $_GET['css']);
     
     exit;
 }
