@@ -12,7 +12,9 @@
     </head>
     
     <body>
-        <h1>It works!</h1>
-        <?php $this->get_view(); ?>
+        <div class="container_12">
+            <h1>Administration</h1>
+            <?php $this->get_view(); ?>
+        </div>
     </body>
 </html>

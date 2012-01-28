@@ -1,0 +1,1 @@
+<p>Admin module</p>
