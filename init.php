@@ -4,7 +4,9 @@ foreach ($config as $key => $value)
     define($key, $value);
 
 require(CORE_PATH . '/System.class.php');
+require(CORE_PATH . '/Translate.class.php');
 require(CORE_PATH . '/Controller.class.php');
+require(CORE_PATH . '/functions.php');
 
 $start_time = System::start();
 
