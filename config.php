@@ -6,6 +6,7 @@ $config = array();
  * DEBUGGING
  */
 $config['DEBUGGING_MODE'] = TRUE;
+$config['DEBUGGING_IP'] = serialize(array('::1'));
 
 /*
  * MODULES

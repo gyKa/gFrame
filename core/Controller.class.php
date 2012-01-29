@@ -7,10 +7,22 @@ class Controller
     private $modules_path;
     private $module_name;
     private $action_name;
+    private $debugging_mode;
+    private $start_time;
     
     public function set_layouts_path($path)
     {
         $this->layouts_path = $path;
+    }
+    
+    public function set_debugging_mode($mode)
+    {
+        $this->debugging_mode = $mode;
+    }
+    
+    public function set_start_time($time)
+    {
+        $this->start_time = $time;
     }
     
     protected function set_layout($name)
@@ -45,5 +57,14 @@ class Controller
         $this->$action();
         
         require($this->layouts_path . '/' . $this->layout_name . '.layout.php');
+        
+        $time = microtime();
+        $time = explode(" ", $time);
+        $finish = $time[1] + $time[0];
+        $total_time = ($finish - $this->start_time);
+        
+        echo "\n\n";
+        echo '<!-- ' . 'Debugging mode: ' . $this->debugging_mode . " -->\n";
+        echo '<!-- ' . 'Page loaded in: ' . $total_time . " -->\n";
     }
 }
