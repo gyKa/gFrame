@@ -1,1 +1,1 @@
-<p>Default module</p>
+<p><?php __('Default module'); ?></p>
