@@ -1,3 +1,6 @@
 [submodule "libs/phpDataMapper"]
 	path = libs/phpDataMapper
 	url = git@github.com:gyKa/phpDataMapper.git
+[submodule "libs/yaml"]
+	path = libs/yaml
+	url = git://github.com/fabpot/yaml.git
