@@ -9,6 +9,12 @@ $config['DEBUGGING_MODE'] = TRUE;
 $config['DEBUGGING_IP'] = serialize(array('::1'));
 
 /*
+ * LANGUAGE
+ */
+$config['LANGUAGES'] = serialize(array('en', 'lt'));
+$config['DEFAULT_LANGUAGE'] = 'en';
+
+/*
  * MODULES
  */
 $config['DEFAULT_GUEST_MODULE'] = 'default'; // Default module for not authorized users
