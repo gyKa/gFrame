@@ -1,15 +1,20 @@
 <?php
 
+/**
+ * Translation function
+ * @param string $text 
+ */
+function __($text)
+{
+    Translation::translate($text);
+}
+
 foreach ($config as $key => $value)
     define($key, $value);
 
-require(CORE_PATH . '/System.class.php');
-require(CORE_PATH . '/Translate.class.php');
-require(CORE_PATH . '/Controller.class.php');
-require(CORE_PATH . '/functions.php');
-
-$start_time = System::start();
-
+/*
+ * CSS
+ */
 if (!empty($_GET['css']))
 {
     header("Content-Type: text/css");
@@ -22,6 +27,20 @@ if (!empty($_GET['css']))
     
     exit;
 }
+
+/*
+ * DEPENDENTS
+ */
+require(CORE_PATH . '/System.class.php');
+require(CORE_PATH . '/Translation.class.php');
+require(CORE_PATH . '/Controller.class.php');
+
+/*
+ * SYSTEM SETUP
+ */
+$start_time = System::start();
+
+Translation::set_translation_file(TRANSLATION_FILE);
 
 $default_module = !empty($_SESSION['user']) ? DEFAULT_USER_MODULE : DEFAULT_GUEST_MODULE;
 
