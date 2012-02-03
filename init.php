@@ -40,6 +40,11 @@ require(CORE_PATH . '/Controller.class.php');
  */
 $start_time = System::start();
 
+if (empty($_GET['lang']) || empty($_SESSION['lang']))
+    System::set_language(DEFAULT_LANGUAGE, LANGUAGES);
+elseif (!empty($_GET['lang'])) 
+    System::set_language (DEFAULT_LANGUAGE, LANGUAGES, $_GET['lang']);
+
 Translation::set_translation_file(TRANSLATION_FILE);
 
 $default_module = !empty($_SESSION['user']) ? DEFAULT_USER_MODULE : DEFAULT_GUEST_MODULE;

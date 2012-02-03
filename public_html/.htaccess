@@ -16,8 +16,9 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
-    RewriteRule ^([^/\.]+)/?$ index.php?module=$1 [L]
-    RewriteRule ^([^/\.]+)/([^/\.]+)/?$ index.php?module=$1&action=$2 [L]
+    RewriteRule ^([^/\.]+)/?$ index.php?lang=$1 [L]
+    RewriteRule ^([^/\.]+)/([^/\.]+)/?$ index.php?lang=$1&module=$2 [L]
+    RewriteRule ^([^/\.]+)/([^/\.]+)/([^/\.]+)/?$ index.php?lang=$1&module=$2&action=$3 [L]
 
     RewriteRule ^css/([^/]+)/?$ index.php?css=$1 [L]
 </IfModule>

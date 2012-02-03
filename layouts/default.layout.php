@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="<?php echo DEFAULT_LANGUAGE; ?>">
+<html lang="<?php echo System::get_language(); ?>">
     <head>
         <meta charset="UTF-8" />
         

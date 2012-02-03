@@ -4,6 +4,7 @@ class System
 {
     private static $module_path;
     private static $debugging_mode;
+    private static $language;
     
     public static function start()
     {
@@ -47,9 +48,41 @@ class System
         return FALSE;
     }
     
+    public static function set_language($default_language, $languages_array,
+            $needed_language = NULL)
+    {
+        $languages_array = unserialize($languages_array);
+        
+        if (is_null($needed_language))
+        {
+            $_SESSION['lang'] = $languages_array[$default_language];
+            self::$language = $languages_array[$default_language];
+        }
+        else
+        {
+            $position = array_search($needed_language, $languages_array);
+            
+            if (is_numeric($position))
+            {
+                $_SESSION['lang'] = $languages_array[$position];
+                self::$language = $languages_array[$position];
+            }
+            else
+            {
+                $_SESSION['lang'] = $languages_array[$default_language];
+                self::$language = $languages_array[$default_language];
+            }
+        }
+    }
+    
+    public static function get_language()
+    {
+        return self::$language;
+    }
+    
     public static function redirect($module)
     {
-        $url = "http://{$_SERVER['HTTP_HOST']}{$_SERVER['PHP_SELF']}/$module";
+        $url = "http://{$_SERVER['HTTP_HOST']}{$_SERVER['PHP_SELF']}/" . self::get_language() . "/$module";
         
         header('Location: ' . $url);
         exit;

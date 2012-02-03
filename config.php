@@ -42,5 +42,5 @@ $config['PUBLIC_PATH'] = dirname(__FILE__); // Public path
  * LANGUAGE
  */
 $config['LANGUAGES'] = serialize(array('en', 'lt'));
-$config['DEFAULT_LANGUAGE'] = 'en';
+$config['DEFAULT_LANGUAGE'] = 0; // First language in LANGUAGES array
 $config['TRANSLATION_FILE'] = $config['ROOT_PATH'] . '/translations.yml';
