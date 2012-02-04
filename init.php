@@ -46,6 +46,7 @@ elseif (!empty($_GET['lang']))
     System::set_language (DEFAULT_LANGUAGE, LANGUAGES, $_GET['lang']);
 
 Translation::set_database(TRANSLATION_DATABASE);
+Translation::set_language(System::get_language());
 
 $default_module = !empty($_SESSION['user']) ? DEFAULT_USER_MODULE : DEFAULT_GUEST_MODULE;
 
