@@ -31,9 +31,10 @@ if (!empty($_GET['css']))
 /*
  * DEPENDENTS
  */
-require(CORE_PATH . '/System.class.php');
-require(CORE_PATH . '/Translation.class.php');
-require(CORE_PATH . '/Controller.class.php');
+$filenames = glob(CORE_PATH . '/*.class.php');
+
+foreach($filenames as $filename)
+    require($filename);
 
 /*
  * SYSTEM SETUP
