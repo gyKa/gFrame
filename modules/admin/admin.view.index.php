@@ -10,9 +10,9 @@
                         ->set_action('index.php?lang=en&method=admin&action=check_login')
                         ->add_element('text',
                                 array('label' => array('title' => 'Username'),
-                                    'name' => 'username'))
+                                    'id' => 'username'))
                         ->add_element('password', 
-                                array('name' => 'password',
+                                array('id' => 'password',
                                     'label' => array('title' => 'Password')))
                         ->add_element('submit', 
                                 array('value' => 'Login'))

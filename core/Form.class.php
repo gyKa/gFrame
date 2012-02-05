@@ -81,7 +81,7 @@ class Form
             case 'text':
                 if (!empty($attributes['label']))
                     $this->add_label($attributes['label']['title'], 
-                            $attributes['name'],
+                            $attributes['id'],
                             $attributes['label']['attributes']);
                         
                 $output .= '<input type="text"';
@@ -93,7 +93,7 @@ class Form
             case 'password':
                 if (!empty($attributes['label']))
                     $this->add_label($attributes['label']['title'], 
-                            $attributes['name'],
+                            $attributes['id'],
                             $attributes['label']['attributes']);
                 
                 $output .= '<input type="password"';
