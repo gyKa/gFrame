@@ -44,6 +44,12 @@ class Form
      */
     private $elements_output;
 
+    /**
+     * Sets action of the form
+     * 
+     * @param string $action Action URL
+     * @return \Form 
+     */
     public function set_action($action)
     {
         $this->action = $action;
@@ -51,6 +57,12 @@ class Form
         return $this;
     }
     
+    /**
+     * Sets method of the form
+     * 
+     * @param string $method Method name
+     * @return \Form 
+     */
     public function set_method($method)
     {
         $this->method = $method;
@@ -58,6 +70,11 @@ class Form
         return $this;
     }
     
+    /**
+     * Enables files uploading
+     * 
+     * @return \Form 
+     */
     public function enable_uploading()
     {
         $this->enabled_uploading = TRUE;
@@ -65,6 +82,13 @@ class Form
         return $this;
     }
     
+    /**
+     * Sets other attributes of the form
+     * 
+     * @param string $key
+     * @param string $value
+     * @return \Form 
+     */
     public function set_attribute($key, $value)
     {
         $this->attributes[] = array($key => $value);
@@ -72,6 +96,13 @@ class Form
         return $this;
     }
     
+    /**
+     * Adds standart HTML element on the form
+     * 
+     * @param string $type HTML element's name
+     * @param array $attributes HTML element's attributes
+     * @return \Form 
+     */
     public function add_element($type, $attributes = array())
     {
         $output = '';
@@ -134,7 +165,6 @@ class Form
         
         $this->elements_output .= $output;
     }
-
 
     /**
      * Adds attributes for element of the form
