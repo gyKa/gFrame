@@ -9,6 +9,13 @@ function __($text)
     Translation::translate($text);
 }
 
+function stripbackslashes(&$string)
+{
+    $string = str_replace('/', '\\/', $string);
+}
+
+array_walk_recursive($_GET, 'stripbackslashes');
+
 foreach ($config as $key => $value)
     define($key, $value);
 
@@ -17,18 +24,14 @@ foreach ($config as $key => $value)
  */
 if (!empty($_GET['css']))
 {
-    $css_file = explode('.', $_GET['css']);
 
-    if ((count($css_file) === 2) && ($css_file[1] === 'css'))
-    {
-        header("Content-Type: text/css");
+    header("Content-Type: text/css");
 
-        if (file_exists(CSS_PATH . '/' . $_GET['css']))
-            echo file_get_contents(CSS_PATH . '/' . $_GET['css']);
-        else
-            if (file_exists(PUBLIC_PATH . '/' . CSS_DIR . '/' . $_GET['css']))
-                echo file_get_contents(PUBLIC_PATH . '/' . CSS_DIR . '/' . $_GET['css']);
-    }
+    if (file_exists(CSS_PATH . '/' . $_GET['css']))
+        echo file_get_contents(CSS_PATH . '/' . $_GET['css']);
+    else
+        if (file_exists(PUBLIC_PATH . '/' . CSS_DIR . '/' . $_GET['css']))
+            echo file_get_contents(PUBLIC_PATH . '/' . CSS_DIR . '/' . $_GET['css']);
 
     exit;
 }
