@@ -1,0 +1,2 @@
+setup:
+	@php setup.php
