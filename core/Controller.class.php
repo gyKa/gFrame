@@ -10,6 +10,8 @@ class Controller
     private $debugging_mode;
     private $start_time;
     
+    protected $variables = array();
+    
     public function set_layouts_path($path)
     {
         $this->layouts_path = $path;
