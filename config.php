@@ -44,3 +44,11 @@ $config['PUBLIC_PATH'] = dirname(__FILE__); // Public path
 $config['LANGUAGES'] = serialize(array('en', 'lt'));
 $config['DEFAULT_LANGUAGE'] = 0; // First language in LANGUAGES array
 $config['TRANSLATION_DATABASE'] = $config['ROOT_PATH'] . '/translations.yml';
+
+/*
+ * DATABASE
+ */
+$config['DB_HOSTNAME'] = 'localhost';
+$config['DB_USERNAME'] = NULL;
+$config['DB_PASSWORD'] = NULL;
+$config['DB_DATABASE'] = NULL;
