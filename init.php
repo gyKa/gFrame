@@ -44,6 +44,8 @@ $filenames = glob(CORE_PATH . '/*.class.php');
 foreach($filenames as $filename)
     require($filename);
 
+include(PUBLIC_PATH . '/models.php');
+
 /*
  * SYSTEM SETUP
  */
