@@ -139,6 +139,13 @@ class Form
                 $output .= " />\n";
                 
                 break;
+            
+            case 'button':
+                $output .= '<input type="button"';
+                $output .= $this->add_attributes($attributes);
+                $output .= " />\n";
+                
+                break;
         }
         
         $this->elements_output .= $output;
