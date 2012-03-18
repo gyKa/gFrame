@@ -92,4 +92,9 @@ class System
     {
         return self::$debugging_mode;
     }
+    
+    public static function dot_to_comma($float_number, $numbers = 2)
+    {
+        return number_format($float_number, $numbers, ',', '');
+    }
 }
