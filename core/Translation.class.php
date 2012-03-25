@@ -23,7 +23,7 @@ class Translation
         $Yaml = new sfYamlParser();
         $dictionary = $Yaml->parse(file_get_contents(self::$translations_file));
         
-        echo is_null($dictionary[$text][self::$language]) ? $text : $dictionary[$text][self::$language];
+        echo !isset($dictionary[$text][self::$language]) ? $text : $dictionary[$text][self::$language];
     }
     
 }
